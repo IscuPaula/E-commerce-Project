@@ -13,30 +13,31 @@
   <body class="text-center">
     <main class="form-signin">
       <form method="post"action="<?php echo site_url('Register');?>">
-        <h1 class="h3 mb-3 fw-normal">Register</h1>
+        <h1 class="h3 mb-3 fw-normal"><?php echo traducere('Inregistrare', "Register")?></h1>
 
 <div class="form-floating">
-    <input type="text" class="form-control" name="fname" require value="<?php echo set_value('fname'); ?>" placeholder="FirstName">
-    <label for="floatingInput">Nume</label>
+    <input type="text" class="form-control" name="fname" required value="<?php echo set_value('fname'); ?>" placeholder="FirstName">
+    <label for="floatingInput"><?php echo traducere('Nume', "First name")?></label>
 </div>
 <div class="form-floating">
-    <input type="text" class="form-control" name="lname" require value="<?php echo set_value('lname'); ?>" placeholder="LastName">
-    <label for="floatingInput">Prenume</label>
+    <input type="text" class="form-control" name="lname" required value="<?php echo set_value('lname'); ?>" placeholder="LastName">
+    <label for="floatingInput"><?php echo traducere('Prenume', "Last name")?></label>
 </div>
 <div class="form-floating">
-    <input type="text" class="form-control" name="uname" require  minlength="5" value="<?php echo set_value('uname'); ?>" placeholder="Username">
-    <label for="floatingInput">Nume de utilizator</label>
+    <input type="text" class="form-control" name="uname" required  minlength="5" maxlength="12" value="<?php echo set_value('uname'); ?>" placeholder="Username">
+    <label for="floatingInput"><?php echo traducere('Nume de utilizator', "Username")?></label>
 </div>
 <div class="form-floating">
-    <input type="text" class="form-control" name="email" require pattern="[^ @]*@[^ @]*" value="<?php echo set_value('email'); ?>" placeholder="Email">
+    <input type="text" class="form-control" name="email" required pattern="[^ @]*@[^ @]*" title="Please add a valid email." value="<?php echo set_value('email'); ?>" placeholder="Email">
     <label for="floatingInput">Email</label>
 </div>
 <div class="form-floating">
-    <input type="password" class="form-control" name="password" require  minlength="5"  value="<?php echo set_value('password'); ?>" placeholder="Password">
-    <label for="floatingPassword">Parola</label>
+    <input type="password" class="form-control" name="password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" title="Your password must contain: 1 capital letter and 1 number" minlength="5" required value="<?php echo set_value('password'); ?>" placeholder="Password">
+    <label for="floatingPassword"><?php echo traducere('Parola', "Password")?></label>
+
  </div>
-<button class="w-100 btn btn-lg btn-primary" type="submit">Inregistrare</button>
-Ai deja cont? <a href="<?php echo base_url();?>login">Autentificare</a>
+<button class="w-100 btn btn-lg btn-primary" type="submit"><?php echo traducere('Inregistrare', "Register")?></button>
+<?php echo traducere('Ai deja cont?', "You have already account?")?> <a href="<?php echo base_url();?>login"><?php echo traducere('Autentificare', "Login")?></a>
 
         </form>
     </main>

@@ -58,7 +58,7 @@
     <div class="row">
       <div class="col-lg-4 center" >
       <img src="uploads/jacheta1.png" class="rounded-circle"  width="180" height="180">
-        <h2><?php echo traducere('Jacheta ', "Jacket ")?></h2>
+        <h2><?php echo traducere('Jachete ', "Jackets ")?></h2>
         <p><a class="btn btn-secondary" href="products"><?php echo traducere('Vezi alte produse', "View other products")?> </a></p>
       </div>
 
