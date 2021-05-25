@@ -1,0 +1,11 @@
+.bg-custom-2 
+{
+    background:linear-gradient(to right,white,whitesmoke);
+}
+nav .navbar-nav li a
+{
+    color: black !important;
+}
+.navbar-brand{
+    color: black !important;
+    }
