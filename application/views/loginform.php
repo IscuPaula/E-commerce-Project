@@ -14,7 +14,7 @@
     <main class="form-signin">
       <form method="post" action="<?php echo site_url('Login');?>">
 
-        <h1 class="h3 mb-3 fw-normal"><?php echo traducere('Inregistrare', "Login")?></h1>
+        <h1 class="h3 mb-3 fw-normal"><?php echo traducere('Autentificare', "Login")?></h1>
 
         <div class="form-floating">
           <input type="text" class="form-control" name="uname" required  value="<?php echo set_value('uname'); ?>" placeholder="Username">

@@ -7,7 +7,15 @@ class Products extends CI_Controller
                 $this->load->helper(array('form','url'));
                 $this->load->library('form_validation'); 
                 $this->load->model('Products_model');
-                $data["products"] = $this->Products_model->get_items();
+                if ($this->input->get("filtru",TRUE)){
+                        $data["products"] = $this->Products_model->get_items_filtered($this->input->get("filtru",TRUE));
+                }else{
+                        if($this->input->get("filtreazaNume",TRUE)){
+                                $data["products"] = $this->Products_model->get_items_filtered_name($this->input->get("filtreazaNume",TRUE)); 
+                        }else{
+                                $data["products"] = $this->Products_model->get_items();
+                        }
+                }
                 #filtrare dupa categorie
                 $this->load->view('products',$data);   
         }

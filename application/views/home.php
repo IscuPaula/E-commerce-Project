@@ -10,22 +10,23 @@
 <main>
       <br>
           <div class="d-flex justify-content-center" >
+          <?php if(in_array("isLogged",$_SESSION)){?>
           <?php if($_SESSION["isLogged"]){?>
           <p class="fs-1">
           <script>  
                     var d = new Date();  
                     var time = d.getHours();  
-                    if (time<10)  
+                    if (time >=6 && time<10)  
                     {  
-                    document.write("<b><?php echo traducere('Buna dimineaata,', "Good morning,")?> </b>");  
+                    document.write("<b><?php echo traducere('Buna dimineata!', "Good morning!")?></b>");  
                     }  
                     else if (time>=10 && time<17)  
                     {  
-                    document.write("<b><?php echo traducere('Buna ziua,', "Good afternoon,")?> </b>");  
+                    document.write("<b><?php echo traducere('Buna ziua!', "Good afternoon!")?></b>");  
                     }  
-                    else  
+                    else if (time>=17 || time<6)
                     {  
-                    document.write("<b><?php echo traducere('Buna seara, ', "Good evening,")?> </b>");  
+                    document.write("<b><?php echo traducere('Buna seara! ', "Good evening!")?></b>");  
                     }  
           </script>  
           <?=$_SESSION["username"]?>!</p>
@@ -33,24 +34,45 @@
               <p class="fs-1">
                 <script>  
                     var d = new Date();  
-                    var time = d.getHours();  
-                    if (time<10)  
+                    var time = d.getHours(); 
+                    if (time >=6 && time<10)  
                     {  
-                    document.write("<b><?php echo traducere('Buna dimineaata!', "Good morning!")?></b>");  
+                    document.write("<b><?php echo traducere('Buna dimineata, ', "Good morning, ")?></b>");  
                     }  
-                    else if (time>=10 && time<13)  
+                    else if (time>=10 && time<17)  
+                    {  
+                    document.write("<b><?php echo traducere('Buna ziua,', "Good afternoon, ")?></b>");  
+                    }  
+                    else if (time>=17 || time<6)
+                    {  
+                    document.write("<b><?php echo traducere('Buna seara, ', "Good evening, ")?></b>");  
+                    }  
+                </script> 
+              </p>
+            <?php }?> 
+            <?php }else{?>
+              <p class="fs-1">
+                <script>  
+                    var d = new Date();  
+                    var time = d.getHours();  
+                    if (time >=6 && time<10)  
+                    {  
+                    document.write("<b><?php echo traducere('Buna dimineata!', "Good morning!")?></b>");  
+                    }  
+                    else if (time>=10 && time<17)  
                     {  
                     document.write("<b><?php echo traducere('Buna ziua!', "Good afternoon!")?></b>");  
                     }  
-                    else  
+                    else if (time>=17 || time<6)
                     {  
                     document.write("<b><?php echo traducere('Buna seara! ', "Good evening!")?></b>");  
                     }  
-            </script> </p>
-            <?php }?> 
+                </script> 
+              </p>
+              <?php }?>
           </div>
           <div class="d-flex justify-content-center" >
-          <p class="fs-2"><?php echo traducere('Ma bucur ca esti aici si sper sa ai o experineta placuta! ', "I'm glad you're here and I hope you have a pleasant experience!")?></p>
+          <p class="fs-2"><?php echo traducere('Ma bucur ca esti aici si sper sa ai o experienta placuta! ', "I'm glad you're here and I hope you have a pleasant experience!")?></p>
           </div>
       </br>
       

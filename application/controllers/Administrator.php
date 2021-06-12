@@ -80,12 +80,9 @@ class Administrator extends CI_Controller {
 	{
 			$crud = new grocery_CRUD();
 
-			$crud->set_relation('customerNumber','customers','{contactLastName} {contactFirstName}');
-			$crud->display_as('customerNumber','Customer');
-			$crud->set_table('orders');
-			$crud->set_subject('Order');
-			$crud->unset_add();
-			$crud->unset_delete();
+			$crud->set_table('final_order');
+			$crud->columns('order_id','firstName','lastNmae','username','email','address','county','city','zip','payment','cardName','cardNumber','cardExpiration','cardCVV');
+
 
 			$output = $crud->render();
 

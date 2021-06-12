@@ -6,12 +6,27 @@
     function get_items(){
         //iei produsele din baza de date si le returnezi
         //functia asta trebuie apelata in controller
-        return $this->db->get("products")->result();
+        $result = $this->db->query('SELECT * FROM products ORDER BY products_id DESC')->result();
+        return $result;
         
     }
 
     function get_item($id){
         $result = $this->db->query('SELECT * FROM products WHERE products_id = ?',$id)->result()[0];
+        return $result;
+    }
+
+    function get_items_filtered($filter){
+        if ($filter == "pretDescr"){
+            $result = $this->db->query('SELECT * FROM products ORDER BY price DESC')->result();
+        }else if($filter == "pretCresc"){
+            $result = $this->db->query('SELECT * FROM products ORDER BY price ASC')->result();
+        }
+        return $result;
+    }
+
+    function get_items_filtered_name($filterName){
+        $result = $this->db->query('SELECT * FROM products WHERE title RLIKE "'.$filterName.'"')->result();
         return $result;
     }
 
@@ -47,7 +62,8 @@
             'Title'=> $title,
             'Description'=> $description,
             'Price'=> $price,
-            'image'=> $target_file
+            'image'=> $target_file,
+            "added_by_user" => $_SESSION["username"]
            
         );
         $this->db->insert('products',$data);
