@@ -41,9 +41,8 @@
                     <option value="pretCresc"><?php echo traducere('Cel mai mic pret', "The lowest price ")?></option>
                     <option value="pretDescr"><?php echo traducere('Cel mai mare pret ', "The highest price")?></option>
                 </select>
-                <input type="submit" value="<?php echo traducere('Filtreaza', "Filter ")?>">
+                <button type="submit" class="btn btn-light" value="<?php echo traducere('Filtreaza', "Filter ")?>"> </button>
             </form>
-            
             <div class="card-group">
                 <?php foreach($products as $product){?>
                     <div class="card" style="width:14rem">

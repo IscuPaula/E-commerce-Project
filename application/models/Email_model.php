@@ -24,7 +24,7 @@ class Email_model extends CI_Model {
         $this->email->message($message);
         if($this->email->send())
         {
-            echo 'Email sent.';
+            echo 'Vei primi un email cu detalii despre comanda ta!.';
         }
         else
         {

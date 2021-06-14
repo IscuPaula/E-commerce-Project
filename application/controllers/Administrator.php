@@ -5,10 +5,8 @@ class Administrator extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-
 		$this->load->database();
 		$this->load->helper('url');
-
 		$this->load->library('grocery_CRUD');
 	}
 
@@ -34,13 +32,10 @@ class Administrator extends CI_Controller {
 	{
 		try{
 			$crud = new grocery_CRUD();
-
 			$crud->set_table('users');
 			$crud->required_fields('firstname','lastname','username','email','password');
 			$crud->columns('users_id','firstname','lastname','username','email','password','Administrator');
-
 			$output = $crud->render();
-
 			$this->_administartor_output($output);
 
 		}catch(Exception $e){
@@ -51,16 +46,11 @@ class Administrator extends CI_Controller {
 	public function orders_management()
 	{
 			$crud = new grocery_CRUD();
-
 			$crud->set_theme('datatables');
 			$crud->set_table('products');
-
 			$crud->required_fields('lastName');
-
 			$crud->set_field_upload('file_url','assets/uploads/files');
-
 			$output = $crud->render();
-
 			$this->_administartor_output($output);
 	}
 
