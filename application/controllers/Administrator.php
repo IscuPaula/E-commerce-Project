@@ -15,11 +15,11 @@ class Administrator extends CI_Controller {
 	public function _administartor_output($output = null)
 	{
 		if($_SESSION["isLogged"]){
-			$this->load->model('Register_model');
+		$this->load->model('Register_model');
 			if(!$this->Register_model->verify_administrator()){
-				redirect('home');
+			redirect('home');
 			}
-		}else{
+			}else{
 			redirect('login');
 		}
 		$this->load->view('administrator.php',(array)$output);

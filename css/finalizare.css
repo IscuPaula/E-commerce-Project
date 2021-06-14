@@ -2,7 +2,11 @@ body
 {
     background:linear-gradient(to right,white,whitesmoke);
 } 
-.container
+div.container
 {
-    text-align:center;
+  align-content: center;
+}
+a
+{
+    color: black !important;
 }

@@ -23,7 +23,6 @@
     <div class="collapse navbar-collapse justify-content-end" >
       <ul class="navbar-nav">
       </li>
-
       <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url();?>home/change_romanian_language">RO</a>
     </li>

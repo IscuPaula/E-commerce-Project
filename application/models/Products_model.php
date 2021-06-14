@@ -36,7 +36,6 @@
         $title = $this->input->post('title');
         $description = $this->input->post('description');
         $price = $this->input->post('price');
-        
         $target_dir = "product_images/";
         $target_file = $target_dir . basename($_FILES["image"]["name"]);
         $uploadOk = 1;
@@ -63,8 +62,7 @@
             'Description'=> $description,
             'Price'=> $price,
             'image'=> $target_file,
-            "added_by_user" => $_SESSION["username"]
-           
+            "added_by_user" => $_SESSION["username"],           
         );
         $this->db->insert('products',$data);
         

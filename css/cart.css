@@ -4,3 +4,11 @@ body
   height: 100%;
   width: 100%;
 } 
+div.finalizare
+{
+  align-self: center;
+}
+a
+{
+    color: black !important;
+}

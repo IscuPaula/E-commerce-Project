@@ -14,20 +14,21 @@
           <?php if($_SESSION["isLogged"]){?>
           <p class="fs-1">
           <script>  
-                    var d = new Date();  
-                    var time = d.getHours();  
-                    if (time >=6 && time<10)  
-                    {  
-                    document.write("<b><?php echo traducere('Buna dimineata!', "Good morning!")?></b>");  
-                    }  
-                    else if (time>=10 && time<17)  
-                    {  
-                    document.write("<b><?php echo traducere('Buna ziua!', "Good afternoon!")?></b>");  
-                    }  
-                    else if (time>=17 || time<6)
-                    {  
-                    document.write("<b><?php echo traducere('Buna seara! ', "Good evening!")?></b>");  
-                    }  
+          
+             var d = new Date();  
+              var time = d.getHours();  
+              if (time >=6 && time<10)  
+              {  
+              document.write("<b><?php echo traducere('Buna dimineata,', "Good morning,")?></b>");  
+              }  
+              else if (time>=10 && time<17)  
+              {  
+              document.write("<b><?php echo traducere('Buna ziua,', "Good afternoon,")?></b>");  
+              }  
+              else if (time>=17 || time<6)
+              {  
+              document.write("<b><?php echo traducere('Buna seara, ', "Good evening,")?></b>");  
+              }  
           </script>  
           <?=$_SESSION["username"]?>!</p>
           <?php }else{?> 
