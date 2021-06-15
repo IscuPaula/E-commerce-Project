@@ -11,7 +11,7 @@ class Email_model extends CI_Model {
             'smtp_pass' => 'P7XMdr6TnOmNEfbJ'
           );
           
-        $message = 'Cineva a cumparat produsul dvs. Detalii produs: ' . "\r\n";
+        $message = 'Cineva a cumparat produsul dumneavoastră. Detalii produs: ' . "\r\n";
         $message = $message . "Titlu: " . $detalii_produs->title . "\r\n";
         $message = $message . "Pret: " . $detalii_produs->price . "\r\n";
         $message = $message . "Descriere: " . $detalii_produs->description . "\r\n";
@@ -45,7 +45,7 @@ class Email_model extends CI_Model {
         $this->email->set_newline("\r\n");
         $this->email->from('cc.store.no.reply@gmail.com');
         $this->email->to($to);
-        $this->email->subject('Comanda plasata');
+        $this->email->subject('Comanda plasată');
         $this->email->message($mesaj);
         if($this->email->send())
         {
